@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "singleFW.h"
 
 CM_CPSS_HW_MODEL_INFO_STC *runningHwModelInfoPtr = NULL;
@@ -330,7 +329,7 @@ CM_CPSS_HW_MODEL_INFO_STC hwModelInfo[] =
 		.hwIf2FrontPortMapPtr = hwIf2FrontPortMapTable_28PS,
 	},
 	{
-		.hwModelId = CM_CPSS_AT_GS950V2_10PS,
+		.hwModelId = CM_CPSS_AT_GS950V2_52PS,
 		.maxFrontPortNum = 52,
 		.maxFiberPortNum = 4,
 		.fiberPortStartIndex = 49,
@@ -340,3 +339,109 @@ CM_CPSS_HW_MODEL_INFO_STC hwModelInfo[] =
 		.hwIf2FrontPortMapPtr = hwIf2FrontPortMapTable_52PS,
 	},
 };
+
+int cmCpssInitHwModel(int runningHwModelId)
+{
+	int rc = GT_OK;
+	int i = 0;
+
+	for (i = 0; i < sizeof(hwModelInfo) / sizeof(CM_CPSS_HW_MODEL_INFO_STC); i++)
+	{
+		if (hwModelInfo[i].hwModelId == runningHwModelId)
+		{
+			runningHwModelInfoPtr = &hwModelInfo[i];
+			printf("[%s -- %d]Init HW model(id: %d) successfully!\n", __FUNCTION__, __LINE__, runningHwModelId);
+			return GT_OK;
+		}
+	}
+
+	printf("[%s -- %d]Init HW model(id: %d) failed!\n", __FUNCTION__, __LINE__, runningHwModelId);
+	return GT_FAIL;
+}
+
+int cmCpssFrontPort2HwPort(int frontPortNum, char *devNumPtr, int *phyPortNumPtr)
+{
+	CM_CPSS_HW_INTERFACE_STC *portHwIfPtr = NULL;
+
+	if (frontPortNum > CM_CPSS_MAX_FRONT_PORT_NUM)
+	{
+		return GT_FAIL;
+	}
+
+	portHwIfPtr =
+		&(runningHwModelInfoPtr->frontPort2HwIfMapPtr[frontPortNum]);
+
+	*devNumPtr = portHwIfPtr->hwDevNum;
+	*phyPortNumPtr = portHwIfPtr->phyPortNum;
+
+	return GT_OK;
+}
+
+int cmCpssHwIf2FrontPort(char devNum, int portNum, int *frontPortPtr)
+{
+	*frontPortPtr = runningHwModelInfoPtr->hwIf2FrontPortMapPtr[devNum][portNum];
+	return GT_OK;
+}
+
+int cmCpssHwModelId2HwModelName
+(
+ int hwModelId,
+ char *hwModelName
+)
+{
+	if (hwModelName == NULL)
+	{
+		printf("malloc failure!\n");
+		return GT_FAIL;
+	}
+
+	fshow(DARKGREEN"hwModelName Addr = %p\n", hwModelName);
+
+	switch (hwModelId)
+	{
+		case CM_CPSS_AT_GS950V2_10PS:
+			strcpy(hwModelName, "AT GS950V2 10PS");
+			break;
+		case CM_CPSS_AT_GS950V2_18PS:
+			strcpy(hwModelName, "AT GS950V2 18PS");
+			break;
+		case CM_CPSS_AT_GS950V2_28PS:
+			strcpy(hwModelName, "AT GS950V2 28PS");
+			break;
+		case CM_CPSS_AT_GS950V2_52PS:
+			strcpy(hwModelName, "AT GS950V2 52PS");
+			break;
+		default:
+			printf("No HW Model Name with a successful match was found!\n");
+			break;
+	}
+
+	fshow(DARKGREEN"hwModelName = %s\n", hwModelName);
+
+	return GT_OK;
+}
+
+/*PHY*/
+/*=============================================================================*/
+int cmCpssFrontPort2SmiIfAddr
+(
+  int frontPortNum,
+  CPSS_PHY_SMI_INTERFACE_ENT *smiInterfacePtr,
+  int *smiAddrPtr
+)
+{
+	CM_CPSS_HW_INTERFACE_STC *portHwIfPtr = NULL;
+
+	if (frontPortNum > CM_CPSS_MAX_FRONT_PORT_NUM)
+	{
+		return GT_FAIL;
+	}
+
+	portHwIfPtr =
+		&(runningHwModelInfoPtr->frontPort2HwIfMapPtr[frontPortNum]);
+
+	*smiInterfacePtr = portHwIfPtr->smiInterface;
+	*smiAddrPtr = portHwIfPtr->smiAddr;
+
+	return GT_OK;
+}

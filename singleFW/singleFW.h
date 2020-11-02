@@ -1,8 +1,16 @@
 #ifndef __SINGLEFW_H__
 #define __SINGLEFW_H__
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "singleGenType.h"
+#include "singleDebug.h"
+
 #define CM_CPSS_MAX_HW_DEV_NUM 2
 #define CM_CPSS_MAX_PHY_PORT_NUM 28
+
+#define CM_CPSS_MAX_HW_MODEL_NAME 30
 
 #define CM_CPSS_RUNNING_HW_MODEL_ID runningHwModelInfoPtr->hwModelId
 #define CM_POE_MAX_PORTS runningHwModelInfoPtr->maxPoeNum
@@ -13,7 +21,7 @@ typedef enum {
 	CM_CPSS_AT_GS950V2_10PS = 0x00,
 	CM_CPSS_AT_GS950V2_18PS = 0x01,
 	CM_CPSS_AT_GS950V2_28PS = 0x02,
-	CM_CPSS_AT_GS950V2_50PS = 0x03,
+	CM_CPSS_AT_GS950V2_52PS = 0x03,
 } CM_CPSS_HW_MODEL_ID_ENT;
 
 typedef enum {
@@ -55,6 +63,11 @@ extern int hwIf2FrontPortMapTable_28PS[CM_CPSS_MAX_HW_DEV_NUM][CM_CPSS_MAX_PHY_P
 extern int hwIf2FrontPortMapTable_52PS[CM_CPSS_MAX_HW_DEV_NUM][CM_CPSS_MAX_PHY_PORT_NUM];
 extern CM_CPSS_HW_MODEL_INFO_STC hwModelInfo[];
 
+int cmCpssInitHwModel
+(
+	int runningHwModelId 
+);
+
 int cmCpssFrontPort2HwPort
 (
 	int frontPortNum,
@@ -62,6 +75,20 @@ int cmCpssFrontPort2HwPort
 	int *phyPortNumPtr
 );
 
+int cmCpssFrontPort2SmiIfAddr
+(
+	int frontPortNum,
+	CPSS_PHY_SMI_INTERFACE_ENT *smiInterfacePtr,
+	int *smiAddrPtr
+);
+
+int cmCpssHwModelId2HwModelName
+(
+	int hwModelId,
+	char *hwModelName
+);
+
+/*PHY*/
 int cmCpssFrontPort2SmiIfAddr
 (
 	int frontPortNum,

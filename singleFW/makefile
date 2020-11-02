@@ -1,5 +1,5 @@
-main: main.o singleFW.o
-	gcc -o main main.c
+main: singleFW.o main.o
+	gcc -o main singleFW.c main.c
 singleFW.o: singleFW.c
 	gcc -c -o singleFW.o singleFW.c
 main.o: main.c
