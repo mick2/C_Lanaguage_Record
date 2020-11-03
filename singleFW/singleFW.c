@@ -349,8 +349,28 @@ int cmCpssInitHwModel(int runningHwModelId)
 	{
 		if (hwModelInfo[i].hwModelId == runningHwModelId)
 		{
+			switch (runningHwModelId)
+			{
+				case CM_CPSS_AT_GS950V2_10PS:
+					strcpy(hwModelInfo[i].hwModelName, "AT GS950V2 10PS");
+					break;
+				case CM_CPSS_AT_GS950V2_18PS:
+					strcpy(hwModelInfo[i].hwModelName, "AT GS950V2 18PS");
+					break;
+				case CM_CPSS_AT_GS950V2_28PS:
+					strcpy(hwModelInfo[i].hwModelName, "AT GS950V2 28PS");
+					break;
+				case CM_CPSS_AT_GS950V2_52PS:
+					strcpy(hwModelInfo[i].hwModelName, "AT GS950V2 52PS");
+					break;
+				default:
+					printf("[%s -- %d]Init HW model(id: %d) failed!\n", __FUNCTION__, __LINE__, runningHwModelId);
+					break;
+			}
 			runningHwModelInfoPtr = &hwModelInfo[i];
-			printf("[%s -- %d]Init HW model(id: %d) successfully!\n", __FUNCTION__, __LINE__, runningHwModelId);
+
+			printf("==> \n" GREEN);
+			printf("Init HW model(id: %d) successfully!\n", runningHwModelId);
 			return GT_OK;
 		}
 	}
@@ -395,8 +415,6 @@ int cmCpssHwModelId2HwModelName
 		return GT_FAIL;
 	}
 
-	fshow(DARKGREEN"hwModelName Addr = %p\n", hwModelName);
-
 	switch (hwModelId)
 	{
 		case CM_CPSS_AT_GS950V2_10PS:
@@ -415,8 +433,6 @@ int cmCpssHwModelId2HwModelName
 			printf("No HW Model Name with a successful match was found!\n");
 			break;
 	}
-
-	fshow(DARKGREEN"hwModelName = %s\n", hwModelName);
 
 	return GT_OK;
 }

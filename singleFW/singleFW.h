@@ -13,6 +13,7 @@
 #define CM_CPSS_MAX_HW_MODEL_NAME 30
 
 #define CM_CPSS_RUNNING_HW_MODEL_ID runningHwModelInfoPtr->hwModelId
+#define CM_CPSS_HW_MODEL_NAME runningHwModelInfoPtr->hwModelName
 #define CM_POE_MAX_PORTS runningHwModelInfoPtr->maxPoeNum
 #define CM_CPSS_MAX_FRONT_PORT_NUM runningHwModelInfoPtr->maxFrontPortNum
 #define CM_FIBER_PORT_START_INDEX runningHwModelInfoPtr->fiberPortStartIndex
@@ -47,6 +48,8 @@ typedef struct CM_CPSS_HW_MODEL_INFO {
 	int fiberPortStartIndex;
 	int maxPoeNum;
 	int powerBudget;
+
+	char hwModelName[CM_CPSS_MAX_HW_MODEL_NAME];
 
 	CM_CPSS_HW_INTERFACE_STC * frontPort2HwIfMapPtr;
 	int (*hwIf2FrontPortMapPtr)[CM_CPSS_MAX_PHY_PORT_NUM];
