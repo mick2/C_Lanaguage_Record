@@ -1,0 +1,10 @@
+# Machine-generated file - use "minicom -s" to change parameters.
+pu port             /dev/ttyUSB0
+pu minit            ^M
+pu updir            /home/rain/workspace/bootldr.rtl/boot
+pu downdir          /home/rain/Desktop
+pu escape-key       Escape (Meta)
+pu statusline       disabled
+pu rtscts           No
+pu sound            No
+pu histlines        5000

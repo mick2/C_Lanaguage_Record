@@ -1,0 +1,63 @@
+[gui]
+	fontui = -family Arial -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	spellingdictionary = none
+[user]
+	name = rain
+	email = ruhuama@nettech-global.com
+	signingkey = D5989572
+[core]
+	filemode = false
+	editor = vim
+	pager = less
+	autocrlf = input
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	excludesfile = 
+[cola]
+	fontdiff = Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0
+	fontui = Arial,9,-1,5,50,0,0,0,0,0
+[color]
+	ui = true
+	diff = auto
+	branch = auto
+	status = auto
+	interactive = auto
+[diff]
+	tool = meld
+[diff "word"]
+	textconv = strings
+[diff "exif"]
+	textconv = exiftool
+[merge]
+	tool = meld
+[alias]
+	br = branch -v --abbrev=6
+	ci = commit
+	co = checkout
+	cp = cherry-pick -s -x
+	di = diff
+	dif = diff
+	info = config --list
+	last = cat-file commit HEAD
+	lo = log --abbrev-commit --abbrev=10 -1
+	one = log --pretty=oneline --graph
+	format = log --pretty=format:'%h %s' --graph
+	st = status
+	stash-unapply = !git stash show -p | git apply -R
+	tree = cat-file -p master^{tree}
+	pa = !sh -c \"git stash && git pull --rebase && git stash apply\"
+	pr = pull --rebase
+	wc = whatchanged
+	wu = log --stat origin..@{0}
+	wup = log -p origin..@{0}
+[push]
+	default = current
+[help]
+	autocorrect = 1
+[commit]
+	template = /home/rain/.gitmessage.txt
+[giggle]
+	compact-mode = false
+	main-window-maximized = false
+	main-window-geometry = 1276x727+1+26
+[reviewboard]
+	url = http://172.22.102.205
