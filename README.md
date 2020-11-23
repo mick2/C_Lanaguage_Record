@@ -38,3 +38,7 @@ printf("study C!\n" GREEN);
 [20201120]
 1. 添加network protocol模块, 记录学习的protocol.
 2. 添加dhcp-bootp, snmp submodule protocol.
+
+[20201123]
+1. 添加装系统的相关文件.
+2. 包含git文档, Makefile文档, vim文档 and so on.
