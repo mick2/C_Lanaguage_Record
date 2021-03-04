@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DEBUG_INFO	debug_printf.h	7;"	d
+OBJ	Makefile	/^OBJ = main.o mytool1.o mytool2.o mytool3.o$/;"	m
+_MYTOOL1_C_	mytool1.c	2;"	d	file:
+_MYTOOL2_H_	mytool2.c	2;"	d	file:
+_MYTOOL3_C_	mytool3.c	2;"	d	file:
+_MYTOOL3_H_	mytool3.h	2;"	d
+_MYTOOL_1_H_	mytool1.h	2;"	d
+_MYTOOL_2_H	mytool2.h	2;"	d
+_PRINT_H_	debug_printf.h	2;"	d
+gtool1_a	mytool1.c	/^int gtool1_a = 1;$/;"	v
+gtool1_b	mytool1.c	/^int gtool1_b = 2;$/;"	v
+gtool2_a	mytool2.c	/^int gtool2_a = 3;$/;"	v
+gtool2_b	mytool2.c	/^int gtool2_b = 4;$/;"	v
+main	main.c	/^int main(int argc, char **argv)$/;"	f	signature:(int argc, char **argv)
+mytool1_add	mytool1.c	/^void mytool1_add(int a, int b)$/;"	f	signature:(int a, int b)
+mytool1_add	mytool1.h	/^void mytool1_add(int a, int b);$/;"	p	signature:(int a, int b)
+mytool1_print	mytool1.c	/^void mytool1_print(char *print_str)$/;"	f	signature:(char *print_str)
+mytool1_print	mytool1.h	/^void mytool1_print(char *print_str);$/;"	p	signature:(char *print_str)
+mytool2_print	mytool2.c	/^void mytool2_print(char *print_str)$/;"	f	signature:(char *print_str)
+mytool2_print	mytool2.h	/^void mytool2_print(char *print_str);$/;"	p	signature:(char *print_str)
+mytool3_add	mytool3.c	/^void mytool3_add(int a, int b)$/;"	f	signature:(int a, int b)
+mytool3_add	mytool3.h	/^void mytool3_add(int, int);$/;"	p	signature:(int, int)
+mytool3_printf	mytool3.c	/^void mytool3_printf(char *str)$/;"	f	signature:(char *str)
+mytool3_printf	mytool3.h	/^void mytool3_printf(char *);$/;"	p	signature:(char *)

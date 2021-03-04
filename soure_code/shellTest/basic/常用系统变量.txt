@@ -1,0 +1,90 @@
+$# :保存程序命令行参数的数目
+$? :保存前一个命令的返回码
+$0 :保存程序名
+$* :以("$1 $2...")的形式保存所有输入的命令行参数
+$@ :以("$1""$2"...)的形式保存所有输入的命令行参数
+
+Int1 -eq int2|当int1等于int2时,返回True 
+Int1 -ge int2|当int1大于/等于int2时,返回True 
+Int1 -le int2|当int1小于/等于int2时,返回True 
+Int1 -gt int2|当int1大于int2时,返回True 
+Int1 -ne int2|当int1不等于int2时,返回True
+
+-d file |当file是一个目录时,返回 True
+-f file |当file是一个普通文件时,返回 True
+-r file |当file是一个刻读文件时,返回 True
+-s file |当file文件长度大于0时,返回 True
+-w file |当file是一个可写文件时,返回 True
+-x file |当file是一个可执行文件时,返回 True
+
+! expr |当expr的值是False时,返回True
+Expr1 -a expr2|当expr1,expr2值同为True时,返回True
+Expr1 -o expr2|当expr1,expr2的值至少有一个为True时,返回True
+
+if语句语法格式：
+if [expression1]
+then
+commands1
+elif [expression2]
+commands2
+else
+commands3
+if
+
+case语句：
+case string1 in
+str1)
+commands1;;
+str2)
+commands2;;
+*)
+commands3;;
+esac
+
+for循环语句语法格式：
+for var1 in list
+do
+commands
+done
+
+bash中常用的命令：
+命令 | 含义
+Alias |设置命令别名
+Bg |将一个被挂起的进程在后台执行
+cd |改变用户的当前目录
+exit |终止一个shell
+export |使作为这个命令的参数的变量及其当前值,在当前运行的shell的子进程中可见
+fc |编辑当前的命令行历史列表
+fg |让一个被挂起的进程在前台执行
+help |显示bash内部命令的帮助信息
+history |显示最近输入的一定数量的命令行
+kill |终止一个进程
+pwd |显示用户当前工作目录
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

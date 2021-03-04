@@ -1,0 +1,373 @@
+cscope 15 $HOME/workroom/shellTest/0711/test -q 0000000036 0000001895
+	@debug_printf.h
+
+1 #i‚de‡
+_PRINT_H_
+
+
+2 
+	#_PRINT_H_
+
+
+	)
+
+4 
+	~<°dio.h
+>
+
+5 
+	~<°rög.h
+>
+
+7 
+	#DEBUG_INFO
+(
+fmt
+, 
+¨gs
+...Ë
+	`¥ötf
+("\033[33m[%s:%d]\033[0m "#fmt"\r\n", 
+__FUNCTION__
+, 
+__LINE__
+, ##¨gs)
+
+	)
+
+	@main.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~"mytoﬁ2.h
+"
+
+3 
+	~"mytoﬁ1.h
+"
+
+4 
+	~"mytoﬁ3.h
+"
+
+6 
+	$maö
+(
+¨gc
+, **
+¨gv
+)
+
+8 
+a
+ = 10;
+
+9 
+b
+ = 20;
+
+10 
+	`mytoﬁ1_¥öt
+("hello mytool1");
+
+11 
+	`mytoﬁ2_¥öt
+("hello mytool2");
+
+12 
+	`mytoﬁ1_add
+(
+a
+, 
+b
+);
+
+13 
+	`mytoﬁ1_add
+(
+gtoﬁ1_a
+, 
+gtoﬁ2_a
+);
+
+14 
+	`mytoﬁ1_add
+(
+gtoﬁ1_b
+, 
+gtoﬁ2_b
+);
+
+15 
+	`mytoﬁ3_add
+(
+gtoﬁ1_b
+, 
+gtoﬁ2_b
+);
+
+17 
+	}
+}
+
+	@mytool1.c
+
+1 #i‚de‡
+_MYTOOL1_C_
+
+
+2 
+	#_MYTOOL1_C_
+
+
+	)
+
+4 
+	~"mytoﬁ1.h
+"
+
+6 
+	ggtoﬁ1_a
+ = 1;
+
+7 
+	ggtoﬁ1_b
+ = 2;
+
+9 
+	$mytoﬁ1_¥öt
+(*
+¥öt_°r
+)
+
+11 
+	`DEBUG_INFO
+("thi†i†mytoﬁ1Öröà%s", 
+¥öt_°r
+);
+
+12 
+	}
+}
+
+14 
+	$mytoﬁ1_add
+(
+a
+, 
+b
+)
+
+16 
+	`DEBUG_INFO
+("sum = %d", 
+a
+ + 
+b
+);
+
+17 
+	}
+}
+
+	@mytool1.h
+
+1 #i‚de‡
+_MYTOOL_1_Hi_
+
+
+2 
+	#_MYTOOL_1_H_
+
+
+	)
+
+4 
+	~"debug_¥ötf.h
+"
+
+6 
+gtoﬁ1_a
+;
+
+7 
+gtoﬁ1_b
+;
+
+10 
+mytoﬁ1_¥öt
+(*
+¥öt_°r
+);
+
+11 
+mytoﬁ1_add
+(
+a
+, 
+b
+);
+
+	@mytool2.c
+
+1 #i‚de‡
+_MYTOOL2_H_
+
+
+2 
+	#_MYTOOL2_H_
+
+
+	)
+
+3 
+	~"mytoﬁ2.h
+"
+
+5 
+	ggtoﬁ2_a
+ = 3;
+
+6 
+	ggtoﬁ2_b
+ = 4;
+
+9 
+	$mytoﬁ2_¥öt
+(*
+¥öt_°r
+)
+
+11 
+	`DEBUG_INFO
+("thi†i†mytoﬁ2Öröt:%s", 
+¥öt_°r
+);
+
+12 
+	}
+}
+
+	@mytool2.h
+
+1 #i‚de‡
+_MYTOOL_2_H
+
+
+2 
+	#_MYTOOL_2_H
+
+
+	)
+
+4 
+	~"debug_¥ötf.h
+"
+
+7 
+gtoﬁ2_a
+;
+
+8 
+gtoﬁ2_b
+;
+
+11 
+mytoﬁ2_¥öt
+(*
+¥öt_°r
+);
+
+	@mytool3.c
+
+1 #i‚de‡
+_MYTOOL3_C_
+
+
+2 
+	#_MYTOOL3_C_
+
+
+	)
+
+4 
+	~"mytoﬁ3.h
+"
+
+6 
+	$mytoﬁ3_¥ötf
+(*
+°r
+)
+
+8 
+	`DEBUG_INFO
+("thi†i†mytoﬁ3Örötf: %s\n", 
+°r
+);
+
+9 
+	}
+}
+
+11 
+	$mytoﬁ3_add
+(
+a
+, 
+b
+)
+
+13 
+	`DEBUG_INFO
+("sum = %d\n", 
+a
+ + 
+b
+);
+
+14 
+	}
+}
+
+	@mytool3.h
+
+1 #i‚de‡
+_MYTOOL3_H_
+
+
+2 
+	#_MYTOOL3_H_
+
+
+	)
+
+4 
+	~"debug_¥ötf.h
+"
+
+6 
+mytoﬁ3_¥ötf
+(*);
+
+7 
+mytoﬁ3_add
+(, );
+
+	@
+1
+.
+0
+8
+82
+debug_printf.h
+main.c
+mytool1.c
+mytool1.h
+mytool2.c
+mytool2.h
+mytool3.c
+mytool3.h
