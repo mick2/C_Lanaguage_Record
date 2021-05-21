@@ -1,0 +1,4 @@
+Linux networks are becoming more and more common,
+but security is often an overlooked issue.
+Unfortunately, in today's environment all networks are potential hacker targets.
+
